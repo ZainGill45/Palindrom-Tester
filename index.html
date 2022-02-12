@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Open+Sans:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Home</title>
+
+    <style>
+      body {
+        background-color: #d95550;
+        font-family: "Open Sans", "Open Sans Condensed", sans-serif;
+        color: azure;
+      }
+
+      main {
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        top: 47%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+
+      main h1 {
+        font-size: 2.7em;
+        margin: 0;
+      }
+
+      main #output-message {
+        margin: 5px 0px 45px 0px;
+        font-size: 1.25em;
+      }
+
+      form {
+        margin-bottom: 45px;
+      }
+      
+      form #palindrom-input {
+        width: 33%;
+        height: 40px;
+        font-size: 1.5em;
+        text-align: center;
+        border-radius: 0;
+        border: 3px solid azure;
+        outline: none;
+      }
+
+      main #palindrom-button {
+        background-color: transparent;
+        border: none;
+        border-radius: none;
+        color: azure;
+        font-size: 1.3em;
+        font-family: "Open Sans";
+        padding-bottom: 8px;
+        border-top: 3px solid transparent;
+        border-left: 3px solid transparent;
+        border-right: 3px solid transparent;
+        border-bottom: 3px solid azure;
+        cursor: pointer;
+        opacity: 1;
+        transition: all linear 0.3s;
+      }
+
+      main #palindrom-button:hover {
+        opacity: 0.7;
+        transition: all ease-out 0.2s;
+      }
+
+      main #palindrom-button:active {
+        opacity: 0.3;
+        font-size: 1.25em;
+        transition: all ease-out 0.2s;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <main>
+      <h1>Palindrom Tester</h1>
+      <p id="output-message">
+        Input a word or sentence to test if it's a palindrome.
+      </p>
+      <form>
+        <input type="text" id="palindrom-input" />
+      </form>
+      <button id="palindrom-button">Test Palindrom</button>
+    </main>
+
+    <script src="main.js"></script>
+
+  </body>
+
+</html>
