@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -29,6 +28,7 @@
         top: 47%;
         transform: translate(-50%, -50%);
         text-align: center;
+        user-select: none;
       }
 
       main h1 {
@@ -44,8 +44,8 @@
       form {
         margin-bottom: 45px;
       }
-      
-      form #palindrom-input {
+
+      form #palindrome-input {
         width: 40%;
         height: 40px;
         font-size: 1.5em;
@@ -56,7 +56,7 @@
         cursor: text;
       }
 
-      main #palindrom-button {
+      main #palindrome-button {
         background-color: transparent;
         border: none;
         border-radius: none;
@@ -64,75 +64,67 @@
         font-size: 1.3em;
         font-family: "Open Sans";
         padding-bottom: 8px;
-        border-top: 3px solid transparent;
-        border-left: 3px solid transparent;
-        border-right: 3px solid transparent;
-        border-bottom: 3px solid azure;
         cursor: pointer;
-        opacity: 1;
-        transition: all linear 0.3s;
-      }
-
-      main #palindrom-button:hover {
-        opacity: 0.7;
         transition: all ease-out 0.2s;
       }
 
-      main #palindrom-button:active {
-        opacity: 0.3;
-        font-size: 1.25em;
+      main #palindrome-button:after {
+        display: block;
+        content: "";
+        margin-top: 10px;
+        border-bottom: solid 2px #fff;
+        transform: scaleX(1.13);
+      }
+
+      main #palindrome-button:active {
+        transform: scale(95%);
         transition: all ease-out 0.2s;
       }
 
-    
+      @media screen and (max-width: 1300px) {
+        form #palindrome-input {
+          width: 60%;
+        }
+        main #palindrome-button {
+          font-size: 2em;
+        }
+      }
 
-    @media screen and (max-width: 1300px) {
-      form #palindrom-input {
-        width: 60%;
+      @media screen and (max-width: 1100px) {
+        form #palindrome-input {
+          width: 85%;
+        }
       }
-      main #palindrom-button {
-        font-size: 2em;
-      }
-    }
 
-    @media screen and (max-width: 1100px) {
-      form #palindrom-input {
-        width: 85%;
+      @media screen and (max-width: 414px) {
+        main h1 {
+          font-size: 2.3em;
+          margin: 0;
+        }
+        form #palindrome-input {
+          width: 87%;
+          margin-bottom: 0px;
+        }
+        main #output-message {
+          font-size: 1.24em;
+          margin-bottom: 35px;
+        }
       }
-    }
-
-    @media screen and (max-width: 414px) {
-      main h1 {
-        font-size: 2.3em;
-        margin: 0;
-      }
-      form #palindrom-input {
-        width: 87%;
-        margin-bottom: 0px;
-      }
-      main #output-message {
-        font-size: 1.24em;
-        margin-bottom: 35px;
-      }
-    }
     </style>
   </head>
 
   <body>
-
     <main>
-      <h1>Palindrom Tester</h1>
+      <h1>palindrome Tester</h1>
       <p id="output-message">
-        Test a word or sentence to see if it's a palindrome.
+        Test a word or sentence to see if it's a Palindrome.
       </p>
       <form>
-        <input type="text" id="palindrom-input" />
+        <input type="text" id="palindrome-input" />
       </form>
-      <button id="palindrom-button">Test Palindrom</button>
+      <button id="palindrome-button">Test palindrome</button>
     </main>
 
     <script src="main.js"></script>
-
   </body>
-
 </html>

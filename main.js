@@ -1,18 +1,19 @@
 const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-let testIfWordIsPalindrom = () => {
+const CheckIfPalindrome = () => {
   // Get input string
-  let input = palindromInput.value;
+  console.log("here")
+  let input = palindromeInput.value;
 
   if (input === '' || isNumeric(input)) {
-    palindromInput.value = null;
+    palindromeInput.value = null;
     outputMessage.innerHTML = `This Is Not A Valid Input`;
-    console.log('here');
+    container.style.backgroundColor = invalidInputBackgroundColor;
     return false
   }
 
-  let originalInput = input;
-  palindromInput.value = null;
+  const originalInput = input;
+  palindromeInput.value = null;
 
   // We want to split up the input into it's characters so they can be indexed also need to format the text string
   input = input.replaceAll(' ', '').replaceAll(',', '').replaceAll('.', '').toLowerCase().split("");
@@ -22,22 +23,22 @@ let testIfWordIsPalindrom = () => {
     input.shift();
     input.pop();
     if (input.length === 0 || input.length === 1) {
-      outputMessage.innerHTML = `${originalInput} Is A Palindrom`; // console.log("This is a palindrom");
-      container.style.backgroundColor = isPalindromBackgroundColor;
+      outputMessage.innerHTML = `${originalInput} Is A palindrome`;
+      container.style.backgroundColor = isPalindromeBackground;
       break;
     }
   }
 
   if (input.length > 2) {
-    outputMessage.innerHTML = `${originalInput} Is Not A Palindrom`; // console.log("Not a palindroms");
-    container.style.backgroundColor = notPalindromBackgroundColor;
-    isPaldindrom = false;
+    outputMessage.innerHTML = `${originalInput} Is Not A palindrome`;
+    container.style.backgroundColor = notPalindromeBackground;
+    isPalindrome = false;
   }
 }
 
 const isNumeric = (str) => {
-  for (var i = 0; i < str.length; i++) {
-    for (var x = 0; x < numbers.length; x++) {
+  for (let i = 0; i < str.length; i++) {
+    for (let x = 0; x < numbers.length; x++) {
       if (parseFloat(str[i]) === numbers[x]) {
         return true;
       }
@@ -47,16 +48,17 @@ const isNumeric = (str) => {
 }
 
 const SetRandomBackgroundColor = () => {
-  let letters = '0123456789ABCDEF';
+  const letters = '0123456789ABCDEF';
   let color = '#';
   for (let i = 0; i < 6; i++) {
     color += letters[Math.floor(Math.random() * 16)];
   }
 }
 
-const notPalindromBackgroundColor = "#ee5253";
-const isPalindromBackgroundColor = "#10ac84";
+const notPalindromeBackground = "#d95550";
+const isPalindromeBackground = "#51cf66";
+const invalidInputBackgroundColor = "#495057";
 const container = document.querySelector("body");
-const palindromSubmitBtn = document.querySelector("#palindrom-button").addEventListener('click', testIfWordIsPalindrom);
-const palindromInput = document.querySelector("#palindrom-input");
+const palindromeSubmitBtn = document.querySelector("#palindrome-button").addEventListener('click', CheckIfPalindrome);
+const palindromeInput = document.querySelector("#palindrome-input");
 const outputMessage = document.querySelector("#output-message");
