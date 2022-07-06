@@ -23,14 +23,14 @@ const CheckIfPalindrome = () => {
     input.shift();
     input.pop();
     if (input.length === 0 || input.length === 1) {
-      outputMessage.innerHTML = `${originalInput} Is A palindrome`;
+      outputMessage.innerHTML = `${originalInput} is a Palindrome`;
       container.style.backgroundColor = isPalindromeBackground;
       break;
     }
   }
-
+ 
   if (input.length > 2) {
-    outputMessage.innerHTML = `${originalInput} Is Not A palindrome`;
+    outputMessage.innerHTML = `${originalInput} is not a Palindrome`;
     container.style.backgroundColor = notPalindromeBackground;
     isPalindrome = false;
   }
